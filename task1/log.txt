@@ -1,0 +1,11 @@
+commit 47738a031c07e3b1b60717c28e348a6ed40a4b1c
+Author: USanko <volodyasn@gmail.com>
+Date:   Wed Apr 29 16:23:35 2020 +0300
+
+    add status file
+
+commit 26d83785d6cc5a20483f1d0c4deef9f8b65a6bed
+Author: USanko <volodyasn@gmail.com>
+Date:   Wed Apr 29 16:19:43 2020 +0300
+
+    add gitignore
