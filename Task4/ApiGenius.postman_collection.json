@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "89ef5150-47de-4ca6-aae8-9307c9c77c80",
+		"name": "ApiGenius",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api.genius.com/referents?web_page_id=10347",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "LsjsdkZlnbUwrrbFy-l52bCIzhP0KELYLddxHybO5m2ybk7gbf1kk1gRFn2kV932",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "api.genius.com/referents?web_page_id=10347",
+					"host": [
+						"api",
+						"genius",
+						"com"
+					],
+					"path": [
+						"referents"
+					],
+					"query": [
+						{
+							"key": "web_page_id",
+							"value": "10347"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api.genius.com/songs/378195",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "LsjsdkZlnbUwrrbFy-l52bCIzhP0KELYLddxHybO5m2ybk7gbf1kk1gRFn2kV932",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "api.genius.com/songs/378195",
+					"host": [
+						"api",
+						"genius",
+						"com"
+					],
+					"path": [
+						"songs",
+						"378195"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api.genius.com/artists/16775",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "LsjsdkZlnbUwrrbFy-l52bCIzhP0KELYLddxHybO5m2ybk7gbf1kk1gRFn2kV932",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "api.genius.com/artists/16775",
+					"host": [
+						"api",
+						"genius",
+						"com"
+					],
+					"path": [
+						"artists",
+						"16775"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
