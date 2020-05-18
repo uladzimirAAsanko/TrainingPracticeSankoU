@@ -350,12 +350,10 @@ input {
 }
 .date {
     color: #4D4D4D;
-    text-align: top;
     margin: 12px 10px;
 }
 .nation{
     color: #4D4D4D;
-    text-align: top;
     margin: 12px 10px;
 }
 .att {
@@ -484,7 +482,7 @@ footer{
     font-weight: bold;
 }
 .footerLogo{
-    display: inline-block
+    display: inline-block;
     max-height: 101px;
     max-width: 100px;
     margin-top: -11px;
