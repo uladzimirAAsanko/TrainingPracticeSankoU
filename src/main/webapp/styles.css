@@ -316,20 +316,22 @@ input {
     top: 10px;
 }
 .pimg {
+    height:46px;
     max-width: 50px;
     border-radius: 80px;
 }
 .pflag{
-    max-width: 50px;
+    max-height: 25px;
     position: absolute;
     margin-left: 10px;
 }
 .prank{
-    max-width: 100px;
+    max-height: 25px;
     position: absolute;
     margin-left: 60px;
 }
 .uname {
+
     font-size: 22px;
     text-align: left;
 }
