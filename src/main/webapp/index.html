@@ -1,94 +1,59 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>NOTSPYTTER</title>
-    <link rel="stylesheet" href = "styles.css">
+    <title>Glitter</title>
+    <link rel="stylesheet" href="/styless.css">
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="module" src="view.js"></script>
+    <script type="module" src="/startup.js"></script>
+    <script src="https://kit.fontawesome.com/94b389b029.js" crossorigin="anonymous"></script>
+    <script type="module" src="/mainPage.js"></script>
 </head>
 <body>
-	<header>
-
+<header>
+    <img class = "logo"
+         src = 'https://psv4.userapi.com/c856416/u154728452/docs/d7/5090928b9a9c/logoter.png?extra=oxsPAz4QIraIO3LHiEJfyONnp490Dk3bK0VRz7_qUQbeuEuRI4sShu1ObytARw7FbGFgvmvYIEf5xCXBiu_XxzzG8s9hxoTWLtU8EHI1RMjsIBVMugy8nPmFjEKyr5DLDBLJFLYjDhKfLQGiUnDJ8GM'
+         width="80"
+    >
 </header>
 <div class="display-f" id="main">
     <div class="rcol">
-        <div class="uinf">
-            <div class="display-f uinf-al">
-                <img class="uimg"
-                 src="https://thumb.tildacdn.com/tild3364-6263-4437-b434-306362633336/-/resize/824x/-/format/webp/s1200.jpg"
-                 alt="Your image">
-                <div class="uinf-m uname">Maxim Isaуev</div>
-            </div>
-            <div>
-                <img class="flag"
-                 src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Flag_of_the_Soviet_Union.svg"
-                 alt="Your flag">
-                 <div class="uinf-m nameOfCountry">USSR</div>
-            </div>
-            <div>
-                <img class="rank"
-                 src="https://sun9-25.userapi.com/c854224/v854224359/2310ac/1DGzM3uo0jo.jpg"
-                 alt="Your rank">
-                 <div class="uinf-m rankText">Polkovnik</div>
-            </div>
-            <div class="secondAccount">Second account
-                <div class="fakeName">Stierlitz</div>
-                <div>
-                <img class="flag"
-                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Flag_of_Germany_%281933%E2%80%931935%29.svg/200px-Flag_of_Germany_%281933%E2%80%931935%29.svg.png"
-                 alt="Your flag">
-                 <div class="uinf-m nameOfCountry">German Reich</div>
-            </div>
-            <div>
-                <img class="rank"
-                 src="https://sun9-50.userapi.com/c854224/v854224359/231081/-x4CJYTU6gQ.jpg"
-                 alt="Your rank">
-                 <div class="uinf-m rankText">SS-Standartenführer</div>
-            </div>
-            </div>
-        </div>
-        <button class="adp">Add post</button>
-    </div>
-    <form class="filter" id="fl">
-        <fieldset class="input">
+        <div class="uinf" id ="uinf">
 
-            <legend class="elname">Filter posts</legend>
-            <p class="title">Author</p>
-            <input type="text" id="author" name="author"><br>
-            <p class="title">Date</p>
-            <input type="date" id="date" name="author"><br>
-            <p class="title">Counrty</p>
-            <select name="nubexSelect" id=nation>
-                <option label="USSR" value="1" selected>USSR</option>
-                <option>German Reich</option>
-                <option>--none--</option>
-            </select>
-            <p class="title">Rank</p>
-            <select name="nubexSelect" id=nation>
-                <option label="all ranks below mine" value="1" selected>all ranks below mine</option>
-                <option>Marshall[The Big Star]</option>
-                <option>General[5 stars]</option>
-                <option>Polkovnik[4 stars]</option>
-                <option>Captain[3 stars]</option>
-                <option>Praporshik[2 stars]</option>
-                <option>Private[1 star]</option>
-            </select>
-            <p>Tags</p>
-            <div class="display-f tags">
-                <span class="tag">#spy</span>
-                <span class="tag">#anekdot</span>
-                <span class="tag">#secret</span>
-                <span class="tag">#Bond</span>
-                <span class="tag">#JamesBond</span>
-                <span class="tag">#music</span>
-                <span class="tag">#games</span>
-            </div>
-            <button id="add">Add tag</button>
-            <input type="text" id="tf">
-            <button class="display-b" id="apply">Apply</button>
-        </fieldset>
-    </form>
-    <div class="feed" id="posts">
+        </div>
+
+        <button class="adp" onclick="mainController.addPostClicked()">Add post</button>
+    </div>
+        <form class="filter" name="filter" id="fl" onkeypress="mainController.keyPressedOnForm(event)" onsubmit="mainController.updateFilter(); return false;">
+            <fieldset class="input">
+
+                <legend class="elname">Filter posts</legend>
+                <p class="title">Author</p>
+                <input type="text" id="author" name="author"><br>
+                <p class="title">Date</p>
+                <input type="date" id="date" name="author"><br>
+                <p class="title">Counrty</p>
+                <select name="nubexSelect" id=nation>
+                    <option label="--none--" value="1" selected>--none--</option>
+                    <option>USSR</option>
+                    <option>Germany</option>
+                    <option>Anclav</option>
+                    <option>Caesars Legion</option>
+                    <option>New California Republic</option>
+
+                </select>
+                <p class="title">Rank</p>
+                <select name="nubexSelect"  id="rank" class=nation>
+                    <option label="all ranks" value="0" selected>all ranks</option>
+                    <option value="6">Marshall[The Big Star]</option>
+                    <option value="5">General[5 stars]</option>
+                    <option value="4">Polkovnik[4 stars]</option>
+                    <option value="3">Captain[3 stars]</option>
+                    <option value="2">Praporshik[2 stars]</option>
+                    <option value="1" >Private[1 star]</option>
+                </select>
+                <button class="display-b" id="apply">Apply</button>
+            </fieldset>
+        </form>
+    <div class="feed" id="posts" onclick="mainController.postClicked(event)">
         <template id="tag-template">
             <span class="tags"></span>
         </template>
@@ -112,26 +77,10 @@
             </div>
         </template>
 
-    <button class="fixedbut">
-        <img
-            src = https://sun9-50.userapi.com/c857524/v857524319/1ed764/6tDQDKuAzr0.jpg
-             alt = "Arrow" height="50">
-    </button>
-</div>
-</div>
-<footer>
-    <div class= "leftSide">
-        <div class= "leftText">NOTSPYTTER</div>
-        <div class= "leftText">Author: Uladzimir Sanko</div>
-        <div class= "leftText">email: volodyasn@gmail.com</div>
+        <button id="load" onclick="mainController.loadTweets()">Load 10 more</button>
     </div>
-    <img class="footerLogo"
-         src="https://psv4.userapi.com/c856416/u154728452/docs/d7/f878313e3bcd/logoter.png?extra=DLK7e4bBbWUpXn64oBLvSGOv2xhOAsX1ix1vD9LJYkeZYecf8ZtUTfHYrRmaOSy-q2sOxYLEmXhzoLEJQfoUq8DfR9EwF97IqeJJgqXUrcRfWR1_234FAfc-qXjdkoctWMD-zvR_-IwQLo42YYLTTEM"
-         alt="Logo image">
-    <div class = "rightSide">
-        <div class= "rightText">21:00 08.05.2020</div>
-        <div class= "rightText">2 курс 5 группа</div>
-    </div>
-</footer>
+
+</div>
+<footer class="foot">NotSpyTTER | By Sanko Uladzimir | 2 курс 5 группа | volodyasn@gmail.com | 08.05.2020</footer>
 </body>
 </html>
