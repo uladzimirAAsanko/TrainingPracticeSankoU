@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title data-target="type">add</title>
+    <link rel="stylesheet" href="styless.css">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/94b389b029.js" crossorigin="anonymous"></script>
+    <script type="module" src="addController.js"></script>
+</head>
+<body>
+<header>
+
+</header>
+<div class="page-name" data-target="type"></div>
+<form id="auth" name="login" onsubmit="addController.submitPost(); return false;">
+    <fieldset class="input">
+        <div data-target="author"></div>
+        <div class="date" data-target="date"></div>
+        <textarea maxlength="280" id="text" class="display-b rounded-box" data-target="description"></textarea>
+        <button type="submit" class="display-b align-btn">Submit</button>
+    </fieldset>
+</form>
+<footer class="foot">NotSpyTTER | By Sanko Uladzimir | 2 курс 5 группа | volodyasn@gmail.com | 08.05.2020</footer>
+</body>
+</html>
