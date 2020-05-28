@@ -1,6 +1,5 @@
 "use strict";
 
-(function () {
 let arr = [
 	{
 		id:'1',
@@ -12,6 +11,7 @@ let arr = [
 		nation:'USSR',
 		rank:'6',
 		photoRank:'https://sun9-69.userapi.com/c854224/v854224359/23109a/yIvoNZLiykk.jpg',
+        like:'10',
 
 	},
 	{
@@ -24,7 +24,7 @@ let arr = [
 		nation:'USSR',
 		rank:'1',
 		photoRank:'https://sun9-40.userapi.com/c854224/v854224359/231093/1NseP8M3Boc.jpg',
-
+        like:'100',
 	},
 	{
 		id:'3',
@@ -36,7 +36,7 @@ let arr = [
 		nation:'Germany',
 		rank:'5',
 		photoRank:'https://sun9-13.userapi.com/c854224/v854224359/2310a3/KaSCBZZhqqQ.jpg',
-
+        like:'30',
 	},
 	{
 		id:'4',
@@ -48,7 +48,7 @@ let arr = [
 		nation:'Germany',
 		rank:'2',
 		photoRank:'https://sun9-70.userapi.com/c854224/v854224359/23108a/MTLPRdhNrfs.jpg',
-
+        like:'40',
 	},
 	{
 		id:'5',
@@ -60,7 +60,7 @@ let arr = [
 		nation:'Germany',
 		rank:'3',
 		photoRank:'https://sun9-50.userapi.com/c854224/v854224359/231081/-x4CJYTU6gQ.jpg',
-
+        like:'50',
 	},
 	{
 		id:'6',
@@ -72,7 +72,7 @@ let arr = [
 		nation:'USSR',
 		rank:'4',
 		photoRank:'https://sun9-25.userapi.com/c854224/v854224359/2310ac/1DGzM3uo0jo.jpg',
-
+        like:'60',
 	},
 	{
 		id:'7',
@@ -84,7 +84,7 @@ let arr = [
 		nation:'Anclav',
 		rank:'2',
 		photoRank:'https://sun9-70.userapi.com/c854224/v854224359/23108a/MTLPRdhNrfs.jpg',
-
+        like:'70',
 	},
 	{
 		id:'8',
@@ -96,7 +96,7 @@ let arr = [
 		nation:'Anclav',
 		rank:'2',
 		photoRank:'https://sun9-70.userapi.com/c854224/v854224359/23108a/MTLPRdhNrfs.jpg',
-
+        like:'80',
 	},
 	{
 		id:'9',
@@ -108,7 +108,7 @@ let arr = [
 		nation:'Caesars Legion',
 		rank:'5',
 		photoRank:'https://sun9-13.userapi.com/c854224/v854224359/2310a3/KaSCBZZhqqQ.jpg',
-
+        like:'80',
 	},
 	{
 		id:'10',
@@ -120,11 +120,11 @@ let arr = [
 		nation:'New California Republic',
 		rank:'5',
 		photoRank:'https://sun9-13.userapi.com/c854224/v854224359/2310a3/KaSCBZZhqqQ.jpg',
-
+        like:'99',
 	},
 ];
 
- class PostList {
+export class PostList {
  	_posts =[];
  	constructor(posty){
  		if(typeof(posty) != 'object'){
@@ -149,10 +149,6 @@ let arr = [
             console.log(`Invalid argument: "filterConfig" contains invalid property "${key}"`);
             return;
         }
-        if(skip + top > this._posts.length){
-        	console.log(`Invalid argument: "more posts than array has"`);
-        	return;	
-        }
 
         let res = this._posts.slice();
         
@@ -175,7 +171,11 @@ let arr = [
         })
         }
         res.sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
-        return res.slice(skip, skip + top)
+        if(skip === top){
+            return res
+        }else{
+            return res.slice(skip, skip + top)
+        }
 }
 	get(id) {
         if (typeof (id) !== 'string') {
@@ -862,9 +862,12 @@ let arr = [
         this._testClear();
     }
 }
+    export function testContainer() {
+        return new PostList(arr);
+    }
 	function testFromOutside(){
 		let posts = new PostList(arr);
 		posts.testEverything();
 	}
-    testFromOutside();
-}());
+    //testFromOutside();
+
